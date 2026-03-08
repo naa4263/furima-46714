@@ -22,3 +22,46 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## users名
+|Column                 |Type     | Options|
+|nickname               |string   | null: false|
+|mail                   |string   | null: false|
+|password               |string   | null: false|
+|encrypted_password     |string   | null: false|
+|last_name              |string   | null: false|
+|first_name             |string   | null: false|
+|birthday               |string   | null: false|
+|month                  |string   | null: false|
+|day                    |string   | null: false|
+
+## items名
+|Column             |Type     |     Options|
+|id                 |string   | null: false|
+|image              |string   | null: false|
+|goods              |string   | null: false|
+|explanation        |text     | null: false|
+|category           |string   | null: false|
+|situation          |string   | null: false|
+|delivery           |string   | null: false|
+|region             |string   | null: false|
+|days               |string   | null: false|
+|price              |string   | null: false|
+
+## order名
+|Column             |Type     |     Options|
+|id                 |string   | null: false|
+|user_id            |string   | null: false|
+
+## addresses名
+|Column             |Type     |     Options|
+|postalcode         |string   | null: false|
+|prefecture         |string   | null: false|
+|city               |string   | null: false|
+|build              |string   | null: false|
+|phonenumber        |string   | null: false|
+
+## comments名
+|Column             |Type       |     Options|
+|user_id            |string     | null: false|
+|time               |datetime   | null: false|
