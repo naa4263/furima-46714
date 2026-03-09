@@ -47,11 +47,12 @@ Things you may want to cover:
 |region             |string   | null: false|
 |days               |string   | null: false|
 |price              |string   | null: false|
+|user_id            |string   | null: false|foreign_key :true|
 
 ## order名
 |Column             |Type     |     Options|
 |id                 |string   | null: false|
-|user_id            |string   | null: false|
+|user_id            |string   | null: false|foreign_key :true|
 
 ## addresses名
 |Column             |Type     |     Options|
@@ -60,8 +61,9 @@ Things you may want to cover:
 |city               |string   | null: false|
 |build              |string   | null: false|
 |phonenumber        |string   | null: false|
+|order_id           |string   | null: false|foreign_key :true|
 
 ## comments名
 |Column             |Type       |     Options|
-|user_id            |string     | null: false|
+|user_id            |string     | null: false|foreign_key :true|
 |time               |datetime   | null: false|
