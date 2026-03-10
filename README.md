@@ -26,44 +26,49 @@ Things you may want to cover:
 ## users名
 |Column                 |Type     | Options|
 |nickname               |string   | null: false|
-|mail                   |string   | null: false|
-|password               |string   | null: false|
+|email                  |string   | null: false|
 |encrypted_password     |string   | null: false|
 |last_name              |string   | null: false|
 |first_name             |string   | null: false|
-|birthday               |string   | null: false|
-|month                  |string   | null: false|
-|day                    |string   | null: false|
+|last_name_kana         |string   | null: false|
+|first_name_kana        |string   | null: false|
+|birthday               |date     | null: false|
+
+- has_many :items
+- has_many :orders
 
 ## items名
 |Column             |Type     |     Options|
-|id                 |string   | null: false|
 |image              |string   | null: false|
-|goods              |string   | null: false|
+|product            |string   | null: false|
 |explanation        |text     | null: false|
 |category           |string   | null: false|
 |situation          |string   | null: false|
-|delivery           |string   | null: false|
+|delivery_fee       |string   | null: false|
 |region             |string   | null: false|
 |days               |string   | null: false|
 |price              |string   | null: false|
 |user_id            |string   | null: false|foreign_key :true|
 
+- belongs_to :user
+- belongs_to :orders
+
 ## order名
 |Column             |Type     |     Options|
-|id                 |string   | null: false|
+|item_id            |string   | null: false|
 |user_id            |string   | null: false|foreign_key :true|
+
+- belongs_to :user
+- belongs_to :addresses
 
 ## addresses名
 |Column             |Type     |     Options|
 |postalcode         |string   | null: false|
-|prefecture         |string   | null: false|
+|region             |string   | null: false|
 |city               |string   | null: false|
-|build              |string   | null: false|
+|build              |string   |
+|street             |string   | null: false|
 |phonenumber        |string   | null: false|
 |order_id           |string   | null: false|foreign_key :true|
 
-## comments名
-|Column             |Type       |     Options|
-|user_id            |string     | null: false|foreign_key :true|
-|time               |datetime   | null: false|
+- belongs_to :orders
