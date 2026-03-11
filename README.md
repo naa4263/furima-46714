@@ -38,37 +38,37 @@ Things you may want to cover:
 - has_many :orders
 
 ## items名
-|Column             |Type     |     Options|
-|image              |string   | null: false|
-|product            |string   | null: false|
-|explanation        |text     | null: false|
-|category           |string   | null: false|
-|situation          |string   | null: false|
-|delivery_fee       |string   | null: false|
-|region             |string   | null: false|
-|days               |string   | null: false|
-|price              |string   | null: false|
-|user_id            |string   | null: false|foreign_key :true|
+|Column             |Type         |     Options|
+|product            |string       | null: false|
+|explanation        |text         | null: false|
+|category           |string       | null: false|
+|situation          |string       | null: false|
+|delivery_fee       |string       | null: false|
+|prefecture         |integer      | null: false|
+|days               |string       | null: false|
+|price              |integer      | null: false|
+|user               |references   | null: false|foreign_key :true|
 
 - belongs_to :user
-- belongs_to :orders
+- has_one :order
 
-## order名
-|Column             |Type     |     Options|
-|item_id            |string   | null: false|
-|user_id            |string   | null: false|foreign_key :true|
+## orders名
+|Column             |Type         |     Options|
+|item               |references   | null: false|foreign_key :true|
+|user               |references   | null: false|foreign_key :true|
 
 - belongs_to :user
-- belongs_to :addresses
+- has_one :item
+- has_one :address
 
 ## addresses名
-|Column             |Type     |     Options|
-|postalcode         |string   | null: false|
-|region             |string   | null: false|
-|city               |string   | null: false|
-|build              |string   |
-|street             |string   | null: false|
-|phonenumber        |string   | null: false|
-|order_id           |string   | null: false|foreign_key :true|
+|Column             |Type        |     Options|
+|postal_code        |string      | null: false|
+|prefecture         |integer     | null: false|
+|city               |string      | null: false|
+|build              |string      |
+|street             |string      | null: false|
+|phonenumber        |string      | null: false|
+|order              |references  | null: false|foreign_key :true|
 
-- belongs_to :orders
+- has_one :order
