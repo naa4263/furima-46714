@@ -38,19 +38,19 @@ Things you may want to cover:
 - has_many :orders
 
 ## items名
-|Column             |Type         |     Options|
-|product            |string       | null: false|
-|explanation        |text         | null: false|
-|category           |string       | null: false|
-|situation          |string       | null: false|
-|delivery_fee       |string       | null: false|
-|prefecture         |integer      | null: false|
-|days               |string       | null: false|
-|price              |integer      | null: false|
-|user               |references   | null: false|foreign_key :true|
+|Column                |Type         |     Options|
+|product               |string       | null: false|
+|explanation           |text         | null: false|
+|category_id           |integer      | null: false|
+|situation_id          |integer      | null: false|
+|delivery_fee_id       |integer      | null: false|
+|prefecture_id         |integer      | null: false|
+|days_id               |integer      | null: false|
+|price                 |integer      | null: false|
+|user                  |references   | null: false|foreign_key :true|
 
 - belongs_to :user
-- has_one :order
+- belongs_to :order
 
 ## orders名
 |Column             |Type         |     Options|
@@ -62,13 +62,13 @@ Things you may want to cover:
 - has_one :address
 
 ## addresses名
-|Column             |Type        |     Options|
-|postal_code        |string      | null: false|
-|prefecture         |integer     | null: false|
-|city               |string      | null: false|
-|build              |string      |
-|street             |string      | null: false|
-|phonenumber        |string      | null: false|
-|order              |references  | null: false|foreign_key :true|
+|Column                |Type        |     Options|
+|postal_code           |string      | null: false|
+|prefecture_id         |integer     | null: false|
+|city                  |string      | null: false|
+|build                 |string      |
+|street                |string      | null: false|
+|phonenumber           |string      | null: false|
+|order                 |references  | null: false|foreign_key :true|
 
 - has_one :order
