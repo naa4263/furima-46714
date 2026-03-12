@@ -50,7 +50,7 @@ Things you may want to cover:
 |user                  |references   | null: false|foreign_key :true|
 
 - belongs_to :user
-- belongs_to :order
+- has_one :order
 
 ## orders名
 |Column             |Type         |     Options|
@@ -58,7 +58,7 @@ Things you may want to cover:
 |user               |references   | null: false|foreign_key :true|
 
 - belongs_to :user
-- has_one :item
+- belongs_to :item
 - has_one :address
 
 ## addresses名
@@ -71,4 +71,4 @@ Things you may want to cover:
 |phonenumber           |string      | null: false|
 |order                 |references  | null: false|foreign_key :true|
 
-- has_one :order
+- belongs_to :order
